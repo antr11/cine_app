@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "420499107319",
+    "project_id": "cinema-afccf",
+    "storage_bucket": "cinema-afccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420499107319:android:b8e85cf80c69abc3c952f2",
+        "android_client_info": {
+          "package_name": "com.ducAn.cine_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420499107319-o0pa8575134a5lb6pa8lsn6e7mgtfbm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ducAn.cine_app",
+            "certificate_hash": "d583edae58bcb381f0ad5c639e9eb8fcab5dcf95"
+          }
+        },
+        {
+          "client_id": "420499107319-vlkog62roogan0e16v6s0uhovgn3n5sq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsSYX78eDGKMTczWVy-q2iLUubc18CbP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420499107319-oboe8ga5sfccin01aedqa6346psm2g6a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "420499107319-i4dkvs8l8k00lrfidk1jlq4v4jrn8785.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cineApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
