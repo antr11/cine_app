@@ -13,9 +13,9 @@ class NewLoginUsecasesImplement extends NewLoginUsecases {
   }
 
   @override
-  Future<User?> signInWithGoogle() {
-    // TODO: implement signInWithGoogle
-    throw UnimplementedError();
+  Future<User?> signInWithGoogle() async {
+    final UserCredential = await _repo.signInWithGoogle();
+    return UserCredential?.user;
   }
 
   @override

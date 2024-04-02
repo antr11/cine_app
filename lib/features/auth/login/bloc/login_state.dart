@@ -27,4 +27,7 @@ class LoadingLoginState extends LoginState {
 
 class FailThirdLoginState extends LoginState {
   String? message;
+  FailThirdLoginState({
+    this.message,
+  });
 }

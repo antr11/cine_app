@@ -67,7 +67,31 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) async {
     emit(LoadingLoginState());
-    await Future.delayed(const Duration(seconds: 2));
+    if (event.isGoogle) {
+      // Sign with Google
+      try {
+        final user = await _usecases.signInWithGoogle();
+        if (user == null) {
+          emit(
+            FailThirdLoginState(
+              message: '''User not found''',
+            ),
+          );
+        } else {
+          emit(
+            SuccessLoginState(
+              message: 'Signin success with email name is ${user.email}',
+            ),
+          );
+        }
+      } catch (e) {
+        emit(
+          FailThirdLoginState(
+            message: e.toString(),
+          ),
+        );
+      }
+    }
     emit(FailLoginState(message: 'dang nhap thanh cong'));
   }
 }

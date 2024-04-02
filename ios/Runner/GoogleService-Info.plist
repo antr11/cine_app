@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>420499107319-ukvc8potcfmvl9e3dfa3a7dsi2vl9rb6.apps.googleusercontent.com</string>
+	<string>420499107319-bfdotuui6nhbcif2l131kv9353branee.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.420499107319-ukvc8potcfmvl9e3dfa3a7dsi2vl9rb6</string>
+	<string>com.googleusercontent.apps.420499107319-bfdotuui6nhbcif2l131kv9353branee</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>420499107319-o0pa8575134a5lb6pa8lsn6e7mgtfbm4.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.cineApp</string>
+	<string>com.ducAn.cineApp</string>
 	<key>PROJECT_ID</key>
 	<string>cinema-afccf</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:420499107319:ios:a668d48bd970ad25c952f2</string>
+	<string>1:420499107319:ios:29bc214f080c555dc952f2</string>
 </dict>
 </plist>

@@ -15,8 +15,7 @@ class NewLoginRepositoryImplement extends NewLoginRepository {
 
   @override
   Future<UserCredential?> signInWithGoogle() {
-    //implement signInWithGoogle
-    throw UnimplementedError();
+    return _authDatasoure.signInWithGoogle();
   }
 
   @override

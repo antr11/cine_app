@@ -42,10 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return BlocConsumer<LoginBloc, LoginState>(listener: (context, state) {
       if (state is SuccessLoginState) {
-        EasyLoading.show();
         showOkAlertDialog(context: context, message: "đăng nhập thành công");
       } else if (state is FailLoginState) {
-        EasyLoading.dismiss();
         showOkAlertDialog(context: context, message: state.message);
       } else if (state is FailThirdLoginState) {
         showOkAlertDialog(context: context, message: state.message);

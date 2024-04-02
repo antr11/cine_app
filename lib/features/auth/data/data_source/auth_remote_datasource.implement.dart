@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'auth_remote_datasource.dart';
 
@@ -10,9 +11,19 @@ class NewAuthRemoteDatasourceImplement extends NewAuthRemoteDatasource {
   }
 
   @override
-  Future<UserCredential?> signInWithGoogle() {
+  Future<UserCredential?> signInWithGoogle() async {
     //  implement signInWithGoogle
-    throw UnimplementedError();
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    if (googleUser == null) {
+      throw Exception('Google Account not found');
+    }
+    final googleAuth = await googleUser.authentication;
+    final credential = GoogleAuthProvider.credential(
+      idToken: googleAuth.idToken,
+      accessToken: googleAuth.accessToken,
+    );
+    final result = await FirebaseAuth.instance.signInWithCredential(credential);
+    return result;
   }
 
   @override
