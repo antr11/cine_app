@@ -1,3 +1,5 @@
+import 'package:cine_app/commom/global_variables.dart';
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 
 class DatePickerWidget extends StatefulWidget {
@@ -46,8 +48,8 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
           child: Row(
             children: [
               Text(
-                '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
-                style: const TextStyle(fontSize: 15, color: Colors.white),
+                formatDate(selectedDate, [M, ' ', dd]),
+                style: Globalvariables.bodyMedium,
               ),
               const SizedBox(width: 15),
               const Icon(Icons.date_range, color: Colors.white)

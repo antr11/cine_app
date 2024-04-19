@@ -141,4 +141,28 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get delete => 'Xóa';
+
+  @override
+  String get movieDetail => 'Thông tin về phim';
+
+  @override
+  String get payForTicket => 'Xác nhận mua vé';
+
+  @override
+  String get cinema => 'Rạp';
+
+  @override
+  String get date => 'Thời gian';
+
+  @override
+  String get runtime => 'Thời lượng';
+
+  @override
+  String get seats => 'Ghế';
+
+  @override
+  String get adult => 'Người lớn';
+
+  @override
+  String get total => 'Tổng';
 }

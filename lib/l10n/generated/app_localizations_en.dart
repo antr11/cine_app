@@ -141,4 +141,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get delete => 'Delete';
+
+  @override
+  String get movieDetail => 'Movie Detail';
+
+  @override
+  String get payForTicket => 'Pay for ticket';
+
+  @override
+  String get cinema => 'Cinema';
+
+  @override
+  String get date => 'Date';
+
+  @override
+  String get runtime => 'Run time';
+
+  @override
+  String get seats => 'Seats';
+
+  @override
+  String get adult => 'Adult';
+
+  @override
+  String get total => 'Total';
 }

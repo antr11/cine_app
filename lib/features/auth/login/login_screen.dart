@@ -13,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:svg_flutter/svg.dart';
 
+import '../../../commom/ultis/localizations.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -82,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         LoginTextField(
                           controller: emailController,
-                          title: 'Login',
+                          title: translate(context).login,
                           isPassword: false,
                           errorMessage: usernameError,
                         ),
@@ -91,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         LoginTextField(
                           controller: passwordController,
-                          title: 'Password',
+                          title: translate(context).password,
                           isPassword: true,
                           errorMessage: passwordError,
                         ),

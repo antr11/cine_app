@@ -17,6 +17,19 @@ class Globalvariables {
   static var selectedNavBarColor = Colors.cyan[800]!;
   static const unselectedNavBarColor = Colors.black87;
   static const primaryContainer = Color(0xFF637394);
+  static const primary = Color(0xFFFF8036);
+  static const onPrimary = Color(0xffffffff);
+  static const secondary = Color(0xFF14CC52);
+  static const onSecondary = Color(0xffffffff);
+  static const background = Color(0xFF1A2232);
+  static const onBackground = Color(0xffffffff);
+  static const error = Colors.red;
+  static const onError = Color(0xffffffff);
+  static const surface = Color(0xFF1F293D);
+  static const onSurface = Color(0xffffffff);
+  static const outline = Color(0x1A6D9EFF);
+  static const surfaceVariant = Color(0x001e273a);
+  static const surfaceTint = Colors.transparent;
 
   static const titleLarge =
       TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white);

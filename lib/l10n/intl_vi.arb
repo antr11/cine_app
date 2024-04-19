@@ -44,5 +44,13 @@
     "fullName": "Họ và tên",
     "areYouSureYouWantToChangeLanguage": "Bạn có chắc bạn muốn đổi ngôn ngữ không?",
     "areYouSureYouWantToSignOut": "Bạn có chắc bạn muốn đăng xuất không?",
-    "delete": "Xóa"
+    "delete": "Xóa",
+    "movieDetail": "Thông tin về phim",
+    "payForTicket": "Xác nhận mua vé",
+    "cinema": "Rạp",
+    "date": "Thời gian",
+    "runtime": "Thời lượng",
+    "seats": "Ghế",
+    "adult": "Người lớn",
+    "total": "Tổng"
 }

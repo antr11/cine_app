@@ -45,6 +45,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleLocalizations</key>
+		<array>
+			<string>ar</string>
+			<string>en</string>
+			<string>es</string>
+		</array>
 		<key>GIDClientID</key>
 		<string>420499107319-bfdotuui6nhbcif2l131kv9353branee.apps.googleusercontent.com</string>
 		<key>CFBundleURLTypes</key>

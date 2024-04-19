@@ -44,5 +44,13 @@
     "fullName": "Full name",
     "areYouSureYouWantToChangeLanguage": "Are you sure you want to change the language?",
     "areYouSureYouWantToSignOut": "Are you sure you want to sign out?",
-    "delete": "Delete"
+    "delete": "Delete",
+    "movieDetail": "Movie Detail",
+    "payForTicket": "Pay for ticket",
+    "cinema": "Cinema",
+    "date": "Date",
+    "runtime": "Run time",
+    "seats": "Seats",
+    "adult": "Adult",
+    "total": "Total"
 }
