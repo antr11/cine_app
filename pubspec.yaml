@@ -39,7 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   hexcolor: ^3.0.1
   svg_flutter: ^0.0.1
-  image_picker: ^1.0.7
+  image_picker: ^1.1.0
 
   flutter_bloc: ^8.1.5
   adaptive_dialog: ^2.1.0
@@ -63,6 +63,13 @@ dependencies:
   sqflite: ^2.3.3
   path: ^1.9.0
   uuid: ^4.4.0
+  cloud_firestore: ^4.17.2
+
+  csc_picker: ^0.2.7
+  flutter_launcher_icons: ^0.13.1
+  shared_preferences: ^2.2.3
+  flutter_image_compress: ^2.2.0
+  firebase_storage: ^11.7.4
 
 dev_dependencies:
   flutter_test:

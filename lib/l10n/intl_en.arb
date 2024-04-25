@@ -52,5 +52,7 @@
     "runtime": "Run time",
     "seats": "Seats",
     "adult": "Adult",
-    "total": "Total"
+    "total": "Total",
+    "areYouSureYouWantToBuyThisTicket": "Are you sure you want to buy this ticket?",
+    "loginSuccess": "Login Success"
 }

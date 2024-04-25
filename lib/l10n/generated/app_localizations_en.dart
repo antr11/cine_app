@@ -165,4 +165,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get total => 'Total';
+
+  @override
+  String get areYouSureYouWantToBuyThisTicket => 'Are you sure you want to buy this ticket?';
+
+  @override
+  String get loginSuccess => 'Login Success';
 }

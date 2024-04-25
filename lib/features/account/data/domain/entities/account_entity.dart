@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import '../../../../../commom/emuns/gender.dart';
 
 class AccountEntity {
@@ -44,10 +43,13 @@ class AccountEntity {
   }
 
   @override
+  String toString() {
+    return '''AccountEnti ty(id: $id, fullName: $fullName, avatarUrl: $avatarUrl, phoneNumber: $phoneNumber, email: $email, gender: $gender, city: $city, dateOfBirth: $dateOfBirth)''';
+  }
+
+  @override
   bool operator ==(covariant AccountEntity other) {
-    if (identical(this, other)) {
-      return true;
-    }
+    if (identical(this, other)) return true;
 
     return other.id == id &&
         other.fullName == fullName &&
@@ -69,10 +71,5 @@ class AccountEntity {
         gender.hashCode ^
         city.hashCode ^
         dateOfBirth.hashCode;
-  }
-
-  @override
-  String toString() {
-    return '''UserEntity(id: $id, fullName: $fullName, avatarUrl: $avatarUrl, phoneNumber: $phoneNumber, email: $email, gender: $gender, city: $city, dateOfBirth: $dateOfBirth)''';
   }
 }

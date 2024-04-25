@@ -59,8 +59,8 @@ class _NewAboutTabWidgetState extends State<NewAboutTabWidget>
     super.build(context);
     print('Call Build widget');
     youtubeController = YoutubePlayerController(
-      // initialVideoId: widget.movieDetailEntity?.youtubeUrl ?? '',
-      initialVideoId: '_inKs4eeHiI',
+      initialVideoId: widget.movieDetailEntity?.youtubeUrl ?? '',
+      // initialVideoId: '_inKs4eeHiI',
       flags: const YoutubePlayerFlags(
         autoPlay: false,
         loop: true,

@@ -10,7 +10,7 @@ part 'account_model.g.dart';
 class AccountModel {
   @JsonKey(name: 'user_id')
   String? userId;
-  @JsonKey(name: 'avartar_url')
+  @JsonKey(name: 'avatar_url')
   String? avatarUrl;
   @JsonKey(name: 'full_name')
   String? fullName;
@@ -36,16 +36,17 @@ class AccountModel {
 
   Map<String, dynamic> toJson() => _$AccountModelToJson(this);
 
-  AccountEntity convertToEntity() {
+  AccountEntity toEntity() {
+    // convert dobString -> dobDateTime
     return AccountEntity(
       id: userId,
-      avatarUrl: avatarUrl,
       fullName: fullName,
-      dateOfBirth: dob,
+      avatarUrl: avatarUrl,
       phoneNumber: phoneNumber,
       email: email,
       gender: gender,
       city: city,
+      dateOfBirth: dob,
     );
   }
 

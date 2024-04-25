@@ -38,7 +38,8 @@ class NewTicketModel {
       theater: json['theater'] as String?,
       time: DateTime.tryParse(json['time']), // DateTimeString theo chuẩn 8061
       // Parse String -> DateTime
-      seats: jsonDecode(json['seats']) as List<String>?,
+      seats:
+          (jsonDecode(json['seats']) as List).map((e) => e as String).toList(),
       unitPrice: json['unitPrice'] as double?,
       userId: json['userId'] as String?,
       createdAt: DateTime.tryParse(json['createdAt']),
@@ -61,7 +62,7 @@ class NewTicketModel {
   }
 
   // Entity -> Model
-  factory NewTicketModel.fromEntity(NewTicketEntity entity) {
+  factory NewTicketModel.fromEntity(TicketEntity entity) {
     return NewTicketModel(
       id: entity.id ?? const Uuid().v4(),
       title: entity.title,
@@ -76,8 +77,8 @@ class NewTicketModel {
     );
   }
 
-  NewTicketEntity toEntity() {
-    return NewTicketEntity(
+  TicketEntity toEntity() {
+    return TicketEntity(
       id: id, //id của model -> id của entity, so on
       title: title,
       runTime: runTime,

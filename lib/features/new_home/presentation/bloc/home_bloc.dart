@@ -9,11 +9,11 @@ import '../../data/remote/new_home_rest_api.dart';
 import '../../domain/repository/new_home_repository.implement.dart';
 import '../../domain/usecases/new_home_usecases.dart';
 import '../../domain/usecases/new_home_usecases.implement.dart';
-import 'new_home_event.dart';
-import 'new_home_state.dart';
+import 'home_event.dart';
+import 'home_state.dart';
 
-class NewHomeBloc extends Bloc<NewHomeEvent, NewHomeState> {
-  NewHomeBloc() : super(NewHomeState(status: BlocStatusState.initial)) {
+class HomeBloc extends Bloc<NewHomeEvent, HomeState> {
+  HomeBloc() : super(HomeState(status: BlocStatusState.initial)) {
     on<GetUpcomingMovieNewHomeEvent>(_onGetUpcomingMovieNewHomeEvent);
   }
 
@@ -23,7 +23,7 @@ class NewHomeBloc extends Bloc<NewHomeEvent, NewHomeState> {
 
   FutureOr<void> _onGetUpcomingMovieNewHomeEvent(
     GetUpcomingMovieNewHomeEvent event,
-    Emitter<NewHomeState> emit,
+    Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(status: BlocStatusState.loading));
     // Xử lý get data

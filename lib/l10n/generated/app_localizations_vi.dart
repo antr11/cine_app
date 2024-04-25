@@ -165,4 +165,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get total => 'Tổng';
+
+  @override
+  String get areYouSureYouWantToBuyThisTicket => 'Bạn có chắc chắn muốn mua vé này không?';
+
+  @override
+  String get loginSuccess => 'Dang nhap thanh cong';
 }

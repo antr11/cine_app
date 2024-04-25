@@ -104,7 +104,7 @@ class _NewMovieSessionTabState extends State<NewMovieSessionTab> {
                     onTap: () {
                       final movieDetail = state.movieDetail;
                       final selectedSession = sessions[index];
-                      final entity = NewTicketEntity(
+                      final entity = TicketEntity(
                         title: movieDetail?.title,
                         runTime: movieDetail?.runtime,
                         filmFormat: selectedSession.filmFormat,
@@ -120,7 +120,7 @@ class _NewMovieSessionTabState extends State<NewMovieSessionTab> {
                       );
                     },
                     child: Container(
-                      color: _colorScheme.background,
+                      color: Globalvariables.background,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,
                         vertical: 24,

@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Globalvariables {
   // COLORS
@@ -118,3 +120,5 @@ ThemeData lightTheme = ThemeData(
     surfaceTint: Colors.transparent,
   ),
 );
+SharedPreferences? sharedPreferences;
+FirebaseAuth firebaseAuth = FirebaseAuth.instance;

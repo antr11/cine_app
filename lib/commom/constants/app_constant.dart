@@ -21,3 +21,9 @@ const genreIdsConstMap = {
   10752: Genre.war,
   37: Genre.western,
 };
+const viStringCode = 'vi';
+const enStringCode = 'en';
+const viPairStringCode = 'vi-VN';
+const enPairStringCode = 'en-US';
+const indexVideoType = ['Trailer', 'Teaser'];
+const cities = ['Hồ Chí Minh', 'Hà Nội', ' Đà Nẵng'];

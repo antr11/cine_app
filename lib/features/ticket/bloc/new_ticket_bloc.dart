@@ -31,9 +31,10 @@ class NewTicketBloc extends Bloc<NewTicketEvent, NewTicketState> {
           message: 'Buy ticket successfully',
         ),
       );
-      final getTickets = _repo.readTickets(
+      final getTickets = await _repo.readTickets(
         userId: FirebaseAuth.instance.currentUser?.uid ?? '',
       );
+      print(getTickets);
     } catch (e) {
       emit(
         state.copyWith(

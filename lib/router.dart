@@ -1,13 +1,21 @@
+import 'package:cine_app/features/account/account_route.dart';
+import 'package:cine_app/features/account/account_screen.dart';
+import 'package:cine_app/features/account/bloc/account_bloc.dart';
+import 'package:cine_app/features/account/change_infor/change_infor_route.dart';
+import 'package:cine_app/features/account/change_infor/change_infor_screen.dart';
 import 'package:cine_app/features/auth/login/login_screen.dart';
 import 'package:cine_app/features/movie_details/movie_detail_route.dart';
 import 'package:cine_app/features/movie_details/movie_detail_screen.dart';
-import 'package:cine_app/features/new_home/presentation/new_home_route.dart';
-import 'package:cine_app/features/new_home/presentation/views/new_home_screen.dart';
+import 'package:cine_app/features/new_home/presentation/bloc/home_bloc.dart';
+import 'package:cine_app/features/new_home/presentation/home_route.dart';
+import 'package:cine_app/features/new_home/presentation/views/home_screen.dart';
+import 'package:cine_app/features/ticket/bloc/new_ticket_bloc.dart';
 import 'package:cine_app/features/ticket/domain/entites/ticket_entity.dart';
 import 'package:cine_app/features/ticket/new_ticket_screen.dart';
 import 'package:cine_app/features/ticket/ticket_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:path/path.dart';
 
 import 'features/auth/login/bloc/login_bloc.dart';
 import 'features/auth/login/login_route.dart';
@@ -19,7 +27,10 @@ class RouteGenerator {
       case NewHomeRoute.screenName:
         return MaterialPageRoute(
           builder: (context) {
-            return const NewHomeScreen();
+            return BlocProvider(
+              create: (context) => HomeBloc(),
+              child: const NewHomeScreen(),
+            );
           },
         );
       case LoginRoute.routeName:
@@ -48,10 +59,31 @@ class RouteGenerator {
           },
         );
       case NewTicketRoute.routeName:
-        final ticketEntity = settings.arguments as NewTicketEntity;
+        final ticketEntity = settings.arguments as TicketEntity;
         return MaterialPageRoute(
           builder: (context) {
-            return NewTicketScreen(ticket: ticketEntity);
+            return BlocProvider(
+              create: (context) => NewTicketBloc(),
+              child: NewTicketScreen(ticket: ticketEntity),
+            );
+          },
+        );
+      case AccountRoute.routeName:
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => AccountBloc(),
+              child: const AccountScreen(),
+            );
+          },
+        );
+      case ChangeInforRoute.routeName:
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => AccountBloc(),
+              child: ChangeInforScreen(),
+            );
           },
         );
       default:

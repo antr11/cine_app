@@ -1,6 +1,7 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cine_app/commom/global_variables.dart';
+import 'package:cine_app/features/account/account_route.dart';
 import 'package:cine_app/features/new_home/presentation/views/widget/customize_button_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,9 +13,9 @@ import '../../../../commom/constants/assets.dart';
 import '../../../../commom/emuns/bloc_status.dart';
 import '../../../movie_details/movie_detail_route.dart';
 import '../../data/models/movie.dart';
-import '../bloc/new_home_bloc.dart';
-import '../bloc/new_home_event.dart';
-import '../bloc/new_home_state.dart';
+import '../bloc/home_bloc.dart';
+import '../bloc/home_event.dart';
+import '../bloc/home_state.dart';
 
 class NewHomeScreen extends StatefulWidget {
   const NewHomeScreen({super.key});
@@ -26,64 +27,11 @@ class NewHomeScreen extends StatefulWidget {
 class _NewHomeScreenState extends State<NewHomeScreen> {
   late ThemeData theme;
 
-  // List<String> movies = [
-  //   'https://lh3.googleusercontent.com/proxy/WyKOUXIEolzVEhdrm2BE4lLyAgCmMV5nZxGM7am8qZqKgi-X4hG63SB1MM8QjTHdoYBIHy2dpGobNZu88euQhukMAe0jWnD1BEtPYiy-ZyAANydGs8FrUzkzdze4U8pX7IWDynM7fAB6sOZlzfYLlPjkAxxd',
-  //   'https://image.tmdb.org/t/p/original/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg',
-  //   'https://m.media-amazon.com/images/I/81S7LIaKQHL._AC_UF894,1000_QL80_.jpg',
-  //   'https://upload.wikimedia.org/wikipedia/vi/7/7f/Kung_Fu_Panda_4_poster.jpg',
-  //   'https://www.elle.vn/wp-content/uploads/2023/12/06/560540/poster-Mai-1024x1450.jpg',
-  //   'https://upload.wikimedia.org/wikipedia/vi/6/62/L%E1%BA%ADt_m%E1%BA%B7t_48h_poster.jpg',
-  //   'https://upload.wikimedia.org/wikipedia/vi/1/17/Lat_Mat_2_Poster.jpeg',
-  // ];`
-
-  List<NewMovie> movies = [
-    // Movie(
-    //   title: 'Kung Panda',
-    //   genre: 'Animation',
-    //   posterUrl:
-    //       'https://image.tmdb.org/t/p/original/1FkeC2MGq10ch64zRMUlrDGjeCy.jpg',
-    // ),
-    // Movie(
-    //   title: 'Kung Panda 2',
-    //   genre: 'Animation',
-    //   posterUrl:
-    //       'https://image.tmdb.org/t/p/original/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg',
-    // ),
-    // Movie(
-    //   title: 'Kung Panda 3',
-    //   genre: 'Animation',
-    //   posterUrl:
-    //       'https://m.media-amazon.com/images/I/81S7LIaKQHL._AC_UF894,1000_QL80_.jpg',
-    // ),
-    // Movie(
-    //   title: 'Kung Panda 4',
-    //   genre: 'Animation',
-    //   posterUrl:
-    //       'https://upload.wikimedia.org/wikipedia/vi/7/7f/Kung_Fu_Panda_4_poster.jpg',
-    // ),
-    // Movie(
-    //   title: 'Mai',
-    //   genre: 'Drama',
-    //   posterUrl:
-    //       'https://www.elle.vn/wp-content/uploads/2023/12/06/560540/poster-Mai-1024x1450.jpg',
-    // ),
-    // Movie(
-    //   title: 'Lật mặt 5',
-    //   genre: 'Action',
-    //   posterUrl:
-    //       'https://upload.wikimedia.org/wikipedia/vi/6/62/L%E1%BA%ADt_m%E1%BA%B7t_48h_poster.jpg',
-    // ),
-    // Movie(
-    //   title: 'Lật mặt 2',
-    //   genre: 'Action, Comedy',
-    //   posterUrl:
-    //       'https://upload.wikimedia.org/wikipedia/vi/1/17/Lat_Mat_2_Poster.jpeg',
-    // ),
-  ];
+  List<NewMovie> movies = [];
 
   int carouselActiveIndex = 0;
 
-  NewHomeBloc get bloc => BlocProvider.of<NewHomeBloc>(context);
+  HomeBloc get bloc => BlocProvider.of<HomeBloc>(context);
 
   @override
   void initState() {
@@ -93,10 +41,9 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    theme = Theme.of(context);
     return Scaffold(
       backgroundColor: Globalvariables.backgroundColor,
-      body: BlocConsumer<NewHomeBloc, NewHomeState>(
+      body: BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {
           if (state.status == BlocStatusState.failed) {
             showOkAlertDialog(context: context, message: state.errorMessage);
@@ -107,7 +54,7 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
           return SafeArea(
             bottom: false,
             child: Container(
-              color: Globalvariables.greyBackgroundCOlor,
+              color: Globalvariables.backgroundColor,
               padding: const EdgeInsets.only(bottom: 8),
               child: Column(
                 children: [
@@ -144,20 +91,18 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
   Widget _buildAppbar() {
     return Container(
-      color: Globalvariables.greyBackgroundCOlor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SvgPicture.asset(Assets.svg.icAppIcon),
-          // AppBarInfoItem (icon: maps, label: TP.HCM)
           _buildAppbarInfoItem(assets: Assets.svg.icLocation, label: 'TP.HCM'),
-          // AppBarInfoItem (icon: translate, label: Eng)
           _buildAppbarInfoItem(assets: Assets.svg.icLanguage, label: 'Eng'),
-          // Button (customize)
           Padding(
             padding: const EdgeInsets.only(right: 8),
             child: CustomizeButton2(
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, AccountRoute.routeName);
+              },
               text: 'Profile',
             ),
           ),

@@ -3,22 +3,22 @@ import '../../../../commom/emuns/bloc_status.dart';
 
 import '../../data/models/movie.dart';
 
-class NewHomeState {
+class HomeState {
   BlocStatusState status;
   List<NewMovie>? upcomingMovies;
   String? errorMessage;
-  NewHomeState({
+  HomeState({
     required this.status,
     this.upcomingMovies,
     this.errorMessage,
   });
 
-  NewHomeState copyWith({
+  HomeState copyWith({
     required BlocStatusState status,
     List<NewMovie>? upcomingMovies,
     String? errorMessage,
   }) {
-    return NewHomeState(
+    return HomeState(
       status: status,
       upcomingMovies: upcomingMovies ?? this.upcomingMovies,
       errorMessage: errorMessage,

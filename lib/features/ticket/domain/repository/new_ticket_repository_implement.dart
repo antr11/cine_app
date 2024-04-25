@@ -1,10 +1,12 @@
+import 'package:cine_app/main.dart';
+
 import '../../data/local/new_ticket_local_datasource_sqf_implement.dart';
 import '../../data/model/ticket_model.dart';
 
 import 'new_ticket_repository.dart';
 
 class NewTicketRepositoryImplement extends NewTicketRepository {
-  final _datasource = NewTicketLocalDatasourceSqfImplement();
+  final _datasource = newTicketDatasource; // use global object
   @override
   Future<void> createTicket(NewTicketModel ticket) {
     return _datasource.createTicket(ticket);

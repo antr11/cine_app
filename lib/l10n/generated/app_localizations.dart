@@ -416,6 +416,18 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'Tổng'**
   String get total;
+
+  /// No description provided for @areYouSureYouWantToBuyThisTicket.
+  ///
+  /// In vi, this message translates to:
+  /// **'Bạn có chắc chắn muốn mua vé này không?'**
+  String get areYouSureYouWantToBuyThisTicket;
+
+  /// No description provided for @loginSuccess.
+  ///
+  /// In vi, this message translates to:
+  /// **'Dang nhap thanh cong'**
+  String get loginSuccess;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

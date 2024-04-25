@@ -92,6 +92,5 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
       }
     }
-    emit(FailLoginState(message: 'dang nhap thanh cong'));
   }
 }

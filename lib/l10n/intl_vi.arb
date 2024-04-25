@@ -52,5 +52,7 @@
     "runtime": "Thời lượng",
     "seats": "Ghế",
     "adult": "Người lớn",
-    "total": "Tổng"
+    "total": "Tổng",
+    "areYouSureYouWantToBuyThisTicket": "Bạn có chắc chắn muốn mua vé này không?",
+    "loginSuccess": "Dang nhap thanh cong"
 }

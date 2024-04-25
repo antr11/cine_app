@@ -6,9 +6,13 @@ import 'package:cine_app/features/account/account_screen.dart';
 import 'package:cine_app/features/auth/login/bloc/login_bloc.dart';
 import 'package:cine_app/features/auth/login/bloc/login_event.dart';
 import 'package:cine_app/features/auth/login/bloc/login_state.dart';
+import 'package:cine_app/features/auth/register/register_screen.dart';
 import 'package:cine_app/features/auth/widgets/login_texfield.dart';
+import 'package:cine_app/features/new_home/presentation/home_route.dart';
+import 'package:cine_app/features/new_home/presentation/views/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:svg_flutter/svg.dart';
@@ -44,7 +48,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return BlocConsumer<LoginBloc, LoginState>(listener: (context, state) {
       if (state is SuccessLoginState) {
-        showOkAlertDialog(context: context, message: "đăng nhập thành công");
+        showOkAlertDialog(
+            context: context, message: translate(context).loginSuccess);
+        Navigator.pushNamed(context, NewHomeRoute.screenName);
       } else if (state is FailLoginState) {
         showOkAlertDialog(context: context, message: state.message);
       } else if (state is FailThirdLoginState) {
@@ -100,13 +106,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           height: 15,
                         ),
-                        Container(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            'Forgot password?',
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Globalvariables.secondaryColor),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (c) => const RegisterScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              'Forgot password?',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Globalvariables.secondaryColor),
+                            ),
                           ),
                         ),
                         const SizedBox(
